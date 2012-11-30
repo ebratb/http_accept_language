@@ -71,7 +71,7 @@ module HttpAcceptLanguage
     #
     def sanitize_available_locales(available_languages)
       available_languages.map do |avail|
-        split_locale = avail.split(/[_-]/)
+        split_locale = avail.to_s.split(/[_-]/)
 
         split_locale.map do |e|
           e unless e.match(/x|[0-9*]/)
